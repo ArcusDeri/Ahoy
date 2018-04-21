@@ -17,4 +17,8 @@ public class Player : NetworkBehaviour {
 		InputValue.z = CrossPlatformInputManager.GetAxis("Vertical") * Time.deltaTime;
 		gameObject.transform.Translate(InputValue);
 	}
+
+	public override void OnStartLocalPlayer(){
+		GetComponentInChildren<Camera>().enabled = true;
+	}
 }
