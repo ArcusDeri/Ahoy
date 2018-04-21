@@ -20,5 +20,8 @@ public class Player : NetworkBehaviour {
 
 	public override void OnStartLocalPlayer(){
 		GetComponentInChildren<Camera>().enabled = true;
+		var firstCamera = GameObject.FindObjectOfType<FirstCamera>();
+		if(firstCamera)
+			firstCamera.enabled = false;
 	}
 }
